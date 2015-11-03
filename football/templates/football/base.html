@@ -1,0 +1,30 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}Matt's Sports Analysis Page{% endblock %}</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <link rel="stylesheet" type="text/css" href="{% static 'football/base.css' %}">
+    </head>
+    <body>
+        <header id="topbar">
+            <nav id="toparea">
+                <ul id="topmenu">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Analytics</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">About me</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+
+        {% block content %}{% endblock %}
+
+     	
+
+
+</body>
+
+</html>

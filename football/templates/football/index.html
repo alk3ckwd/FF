@@ -1,0 +1,52 @@
+{% extends 'football/base.html' %}
+
+
+
+{% block title %}Passing Analytics{% endblock %}
+
+{% block content %}
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% static 'football/main.css' %}">
+<script type="text/javascript" src="{% static 'football/main.js' %}"></script>
+<script type="text/javascript" src="{% static 'football/Chart.min.js' %}"></script>
+<div class="main">
+	<div class="option-selects">
+		<div id="teams">
+			<p>Teams</p>
+			<select id="team_select" name="team_select" onChange="window.document.location.href=this.options[this.selectedIndex].value;" value="GO">
+			<option selected="selected">Select one</option>
+			{% if teams %}
+				{% for team in teams %}
+				    <option value="{% url 'team_detail' team.id %}">{{team.team_name}}</option>
+				{% endfor %}
+			{% endif %}
+			</select>
+		</div>
+		<div id="weeks">
+			<p>Week</p>
+			<select id="week_select" name="week_select">
+				<option>Select a week</option>
+			</select>
+		</div>
+
+		<div id="matchup">
+			<p>Matchup</p>
+			<select id="game_select" name="game_select"></select>
+		</div>
+	</div>
+
+	<div class="charts-area">
+		<div class="versus" id="hovad">
+			<p id="hovad-label"></p>
+			<canvas id="chart1" width="300" height="300"></canvas>
+			
+		</div>
+		<div class="versus" id="aovhd">
+			<p id="aovhd-label"></p>
+			<canvas id="chart2" width="300" height="300"></canvas>
+		</div>
+	</div>
+</div>
+<div id="chartjs-tooltip"></div>
+
+{% endblock %}

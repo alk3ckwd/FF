@@ -1,0 +1,10 @@
+#hovad{
+    float: left;
+}
+#aovhd{
+    float: left;
+}
+
+#hovad-label, #aovhd-label{
+	text-align: center;
+}

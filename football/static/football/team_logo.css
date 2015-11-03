@@ -1,0 +1,11 @@
+.logo {
+	position: absolute;
+	height: 50px;
+	width: 50px;
+	background-image: url('all_teams.gif');
+	background-repeat: no-repeat;
+}
+
+#home-logo{
+	background-position: 0 0;
+}
