@@ -5,11 +5,6 @@ class games(models.Model):
 	week = models.IntegerField(default=0)
 	home_team = models.ForeignKey('stats', related_name='home_team')
 	away_team = models.ForeignKey('stats', related_name='away_team')
-	humidity = models.IntegerField(default=None, blank=True, null=True)
-	temp = models.IntegerField(default=None, blank=True, null=True)
-	condition = models.CharField(max_length=20, default=None, blank=True, null=True)
-	wind_speed = models.IntegerField(blank=True, null=True)
-	wind_dir = models.CharField(max_length=3, blank=True, null=True)
 	venue_type = models.CharField(max_length=100, blank=True, null=True)
 	venue_surface = models.CharField(max_length=100, blank=True, null=True)
 
@@ -18,11 +13,6 @@ class games(models.Model):
 			"week": self.week,
 			"home_team": self.home_team,
 			"away_team": self.away_team,
-			"humidity": self.humidity,
-			"temp": self.temp,
-			"condition": self.condition,
-			"wind_speed": self.wind_speed,
-			"wind_dir": self.wind_dir,
 			"venue_type": self.venue_type,
 			"venue_surface": self.venue_surface
 		}
